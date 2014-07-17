@@ -56,7 +56,29 @@ def insert_user(request):
 
     html = "<html><body>It is now %s.</body></html>" % 'insert success!'
 
-    return HttpResponse(html);
+    return HttpResponse(html)
+
+def show_user(request):
+
+    html = "";
+
+    for user in models.User.objects.all():
+        html += user.__str__()
+
+    return HttpResponse(html)
+
+def show_user_name(request, userName):
+
+    html = "";
+
+    keyName = str(userName)
+
+    for user in models.User.objects.filter(name = keyName):
+        html += user.__str__()
+
+    return HttpResponse(html)
+
+
 
 
 
