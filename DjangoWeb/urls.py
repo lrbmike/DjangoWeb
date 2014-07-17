@@ -1,10 +1,7 @@
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
-from pythonWeb.views import current_datetime
-from pythonWeb.views import hours_ahead
-from pythonWeb.views import show_list
-from pythonWeb.views import insert_user
+from pythonWeb.views import *
 
 admin.autodiscover()
 
@@ -18,4 +15,7 @@ urlpatterns = patterns('',
     url(r'^time/plus/(\d{1,2})/$', hours_ahead),
     url(r'^show_list/$', show_list),
     url(r'^insert_user/$', insert_user),
+    url(r'^show_user/$', show_user),
+    url(r'^show_user_name/(\w+)/$', show_user_name),
+
 )
