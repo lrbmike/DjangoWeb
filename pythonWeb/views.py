@@ -58,6 +58,7 @@ def insert_user(request):
 
     return HttpResponse(html)
 
+#查询user表所有的用户
 def show_user(request):
 
     html = "";
@@ -67,6 +68,7 @@ def show_user(request):
 
     return HttpResponse(html)
 
+#根据用户名查询用户
 def show_user_name(request, userName):
 
     html = "";
