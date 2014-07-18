@@ -33,6 +33,6 @@ class Grade(models.Model):
 
     def __str__(self):
         if self.name:
-            return "%d, %s,, %d, %d, %s" % (self.id, self.name, self.teecherId, self.userId, str(self.createTime))
+            return "%d, %s, %d, %d, %s" % (self.id, self.name, self.teacherId, self.userId, str(self.createTime))
         else:
             return ""
