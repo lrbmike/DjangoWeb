@@ -10,14 +10,19 @@ import datetime
 
 from django.db import connection
 
+from django.shortcuts import render_to_response
+
 # Create your views here.
 
 def current_datetime(request):
     now = datetime.datetime.now()
 
-    html = "<html><body>It is now %s.</body></html>" % now
+    # html = "<html><body>It is now %s.</body></html>" % now
 
-    return HttpResponse(html)
+    templateHtml = 'time_now.html'
+    data = {'now': str(now)}
+
+    return render_to_response(templateHtml, data)
 
 
 def hours_ahead(request, offset):
@@ -61,12 +66,16 @@ def insert_user(request):
 #查询user表所有的用户
 def show_user(request):
 
-    html = "";
+    # html = "";
+    #
+    # for user in models.User.objects.all():
+    #     html += user.__str__()
 
-    for user in models.User.objects.all():
-        html += user.__str__()
+    object_list = models.User.objects.all()
+    template_html = 'user_list.html';
+    data = {'object_list': object_list}
 
-    return HttpResponse(html)
+    return render_to_response(template_html,data)
 
 #根据用户名查询用户
 def show_user_name(request, userName):
