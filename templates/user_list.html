@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>User List</h1>
+    <ul>
+    {% for user in object_list %}
+        <li><a href="{{ user.id }}">{{ user.name }}</a></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
