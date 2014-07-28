@@ -90,6 +90,15 @@ def show_user_name(request, userName):
     return HttpResponse(html)
 
 
+from django_websocket import require_websocket
+
+@require_websocket
+def echo_once(request):
+    message = request.websocket.wait()
+    print message
+    message += 'hello '
+    request.websocket.send(message)
+
 
 
 

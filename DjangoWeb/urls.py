@@ -17,5 +17,6 @@ urlpatterns = patterns('pythonWeb.views',
     url(r'^insert_user/$', 'insert_user'),
     url(r'^show_user/$', 'show_user'),
     url(r'^show_user_name/(\w+)/$', 'show_user_name'),
+    url(r'^echo_once/$', 'echo_once'),
 
 )
